@@ -1,6 +1,10 @@
 #!/bin/bash
 
-[[ -e "${HOME}/default/dotfiles" ]] && . "$HOME/default/dotfiles" || echo "No default dotfiles settings found at ~/default/dotfiles"
+if [[ -e "${HOME}/default/dotfiles" ]]; then
+  . "$HOME/default/dotfiles"
+else
+  echo "No default dotfiles settings found at ~/default/dotfiles"
+fi
 
 : ${DOTFILES_GIT_REPO?"Need to specify the location of your dotfiles git repo"} ${DOTFILES_LOC?"Need to specify where to clone the repo to"}
 
