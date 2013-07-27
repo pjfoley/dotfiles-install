@@ -1,8 +1,8 @@
 #!/bin/bash
 
-[[ ! -d "~/default" ]] && mkdir -p "~/default"
+[[ ! -d ~/default ]] && mkdir -p ~/default
 
-[[ ! -e "~/default/dotfiles" ]] && cat << 'EOF' > "~/default/dotfiles"
+[[ ! -e ~/default/dotfiles ]] && cat << 'EOF' > ~/default/dotfiles
 # Defaults for dotfiles - sourced by various dotfiles scripts
 
 # Location of dotfiles GIT Repo
