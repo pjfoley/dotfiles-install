@@ -6,7 +6,7 @@
 # Defaults for dotfiles - sourced by various dotfiles scripts
 
 # Location of dotfiles GIT Repo
-DOTFILES_GIT_REPO="${DOTFILES_GIT_REPO:=git://github.com/pjfoley/dotfiles.git}"
+DOTFILES_GIT_REPO="${DOTFILES_GIT_REPO:=git@github.com:pjfoley/dotfiles.git}"
 
 # User's Home Location
 USER_HOME="${USER_HOME:=${HOME}}"
