@@ -13,6 +13,9 @@ set -o errexit
 
 l_CURRENT_DIR=${PWD}
 
+# Set trap to clean up on error
+trap 'rm -f "${DOTFILES_LOC}"; exit' INT TERM
+
 # Install the GIT Repo
 if [[ ! -d ${DOTFILES_LOC} ]]; then
   git clone ${DOTFILES_GIT_REPO} ${DOTFILES_LOC}
