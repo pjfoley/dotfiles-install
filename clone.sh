@@ -1,10 +1,13 @@
 #!/bin/bash
 
-if [[ -e "${HOME}/default/dotfiles" ]]; then
-  . "$HOME/default/dotfiles"
-else
-  echo "No default dotfiles settings found at ~/default/dotfiles"
-fi
+# Exit script if using unset variable
+set -o nounset
+
+# Exit script on un-handled non-true statement
+set -o errexit
+
+# Load defaults for script if file exists
+[ -e "${HOME}/default/dotfiles" ] && . "$HOME/default/dotfiles"
 
 : ${DOTFILES_GIT_REPO?"Need to specify the location of your dotfiles git repo"} ${DOTFILES_LOC?"Need to specify where to clone the repo to"}
 
